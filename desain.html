@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kite Designer | Layang-Layang Indah</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #60a5fa;
+            --light-bg: #f8f9fa;
+            --dark-text: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--light-bg);
+            color: var(--dark-text);
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: white !important;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 600;
+            padding: 8px 20px !important;
+            margin: 0 5px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: rgba(255, 255, 255, 0.2);
+            opacity: 1;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 60px 20px;
+            color: white;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Designer Grid */
+        .designers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Designer Card */
+        .designer-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .designer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(30, 58, 138, 0.15);
+        }
+
+        .designer-image {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+        }
+
+        .designer-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .designer-card:hover .designer-image img {
+            transform: scale(1.08);
+        }
+
+        .designer-kite-overlay {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 4rem;
+            opacity: 0.3;
+            transform: rotate(15deg);
+        }
+
+        .designer-info {
+            padding: 30px;
+        }
+
+        .designer-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .designer-description {
+            color: #64748b;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+
+        .designer-specialty {
+            display: inline-block;
+            padding: 6px 16px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .designers-grid {
+                grid-template-columns: 1fr;
+                padding: 20px 15px;
+            }
+            
+            .designer-image {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="Logo">
+                <span>Sky Dream</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#products">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link" href="desain.html">Kite Designer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#kontak">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>🪁 Kite Designer</h1>
+        <p>Meet the talented designers behind our premium kites</p>
+    </section>
+
+    <!-- Designers Grid -->
+    <div class="container">
+        <div class="designers-grid" id="designersGrid">
+            <!-- Designer cards will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sky Dream. All rights reserved.</p>
+            <p>Made with ❤️ by talented designers</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const designers = [
+            {
+                id: 1,
+                name: "Rishad",
+                specialty: "Pioneer Kite Designer",
+                image: "foto1.jpg",
+                description: "This is the reason why we are present today. Sky-Dream was founded by Rishad. Rishad is a relatively young kite flyer who has been flying kites since 2020. He has studied almost all types of traditional kites in Indonesia. After learning how to make traditional kites, he ventured into new types, such as show kites, which left a strong impression on him, and he has continued to specialize in show kites until now. Not only is he a kite flyer and seller, but he also enjoys designing and making his own kites. Through his passion for kite flying, he has learned many things about the world of kites. Today, he is also selling them. Be careful, anything can be made to fly by him."
+            },
+            {
+                id: 2,
+                name: "bayu ",
+                specialty: "Master Kite Craftsman",
+                image: "bayu.jpg",
+                description: "He is Bayu, a young man from Jogja. He is one of the people in Indonesia who can create and design inflatable kites. What's cool is that from a photo, he can turn it into a kite. Bayu has also made spinner kites, show kites, and sport kites. It seems like he can make just about anything and make it fly."
+            },
+            {
+                id: 3,
+                name: "Heri",
+                specialty: "Innovation Expert",
+                image: "heri.jpg",
+                description: "Heri is a tailor who played a significant role in the journey of Sky-Dream from the beginning. The fact is, when Rishad was still doing everything on his own, he once felt burnt out and too tired from sewing, and that's when Rishad met Heri. At that time, Rishad only wanted Heri to help just that once, but it turned out Heri was someone who quickly understood. Making inflatable kites is quite difficult, especially asking someone who has never made one; skill and logic are heavily used when sewing, and Heri passed the test. After that, he always helped Rishad in making kites."
+            }
+        ];
+
+        // Render designers
+        function renderDesigners() {
+            const grid = document.getElementById('designersGrid');
+            
+            grid.innerHTML = designers.map(designer => `
+                <div class="designer-card">
+                    <div class="designer-image">
+                        <img src="${designer.image}" alt="${designer.name}" onerror="this.src='https://via.placeholder.com/400x500/3b82f6/ffffff?text=${encodeURIComponent(designer.name)}'">
+                        <div class="designer-kite-overlay">🪁</div>
+                    </div>
+                    <div class="designer-info">
+                        <span class="designer-specialty">${designer.specialty}</span>
+                        <h3 class="designer-name">${designer.name}</h3>
+                        <p class="designer-description">${designer.description}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Initialize
+        window.addEventListener('DOMContentLoaded', renderDesigners);
+    </script>
+</body>
+</html>

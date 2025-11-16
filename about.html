@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Sky Dream - Layang-Layang Indah</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #60a5fa;
+            --light-bg: #f8f9fa;
+            --dark-text: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--light-bg);
+            color: var(--dark-text);
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: white !important;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 600;
+            padding: 8px 20px !important;
+            margin: 0 5px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: rgba(255, 255, 255, 0.2);
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .hero-about {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 100px 20px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-about::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveGrid 20s linear infinite;
+        }
+
+        @keyframes moveGrid {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-about-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-about h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .hero-about p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .story-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .story-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        .story-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        .highlight-text {
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        /* Achievements Section */
+        .achievements-section {
+            padding: 80px 20px;
+            background: var(--light-bg);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #64748b;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: calc(50% - 40px);
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(30, 58, 138, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(30, 58, 138, 0.2);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: 5px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+            z-index: 2;
+        }
+
+        .timeline-image {
+            width: 100%;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .timeline-content:hover .timeline-image img {
+            transform: scale(1.1);
+        }
+
+        .timeline-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+        }
+
+        .timeline-year {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .timeline-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .timeline-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .timeline-location i {
+            color: var(--secondary-color);
+        }
+
+        .timeline-description {
+            color: #64748b;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: white;
+            padding: 60px 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #64748b;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-about h1 {
+                font-size: 2.5rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+                padding-left: 50px;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="Logo">
+                <span>Sky Dream</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#products">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link" href="desain.html">Kite Designer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#kontak">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-about">
+        <div class="hero-about-content">
+            <h1>🪁 About Sky Dream</h1>
+            <p>Our journey to bring kite art to Indonesia and the world. From local festivals to international competitions, we continue to innovate and share the beauty of traditional Indonesian kites.</p>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="story-content">
+            <h2 class="story-title">Our Story</h2>
+            <p class="story-text">
+                <span class="highlight-text">Sky Dream</span> or known by the name <span class="highlight-text">Rishad</span>, is a kite community and business born out of a deep love for traditional Indonesian art. We don't just sell kites, we also preserve culture and develop innovations in modern kite design.
+            </p>
+            <p class="story-text">
+                From small participation in local festivals, we have now grown into a major player in the Indonesian kite industry. We are proud to have represented Indonesia at various international festivals and remain committed to bringing Indonesia's name to the global stage.
+            </p>
+        </div>
+    </section>
+
+    <!-- Achievements/Timeline Section -->
+    <section class="achievements-section">
+        <div class="section-header">
+            <h2>Our Festival Journey</h2>
+            <p>Sky Dream's historic moments at various kite festivals</p>
+        </div>
+
+        <div class="timeline">
+            <!-- Festival 1 -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-image">
+                        <img src="festival-purworejo.jpg" alt="Festival Purworejo" onerror="this.src='https://via.placeholder.com/600x300/3b82f6/ffffff?text=Festival+Purworejo'">
+                        <div class="timeline-badge">Local Event</div>
+                    </div>
+                    <span class="timeline-year">2022-2023</span>
+                    <h3 class="timeline-title">Festival Layang-Layang Purworejo</h3>
+                    <div class="timeline-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Purworejo, Jawa Tengah, Indonesia</span>
+                    </div>
+                    <p class="timeline-description">
+                       Sky-Dream or Rishad, has often participated in local and international kite events, such as in Purworejo, Bali, Malaysia, etc..
+                    </p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <!-- Festival 2 -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-image">
+                        <img src="sanur.jpg" alt="Sanur International Kite Festival" onerror="this.src='https://via.placeholder.com/600x300/3b82f6/ffffff?text=Sanur+Kite+Festival+2023'">
+                        <div class="timeline-badge">International</div>
+                    </div>
+                    <span class="timeline-year">2023</span>
+                    <h3 class="timeline-title">Sanur International Kite Festival</h3>
+                    <div class="timeline-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Sanur Beach, Bali, Indonesia</span>
+                    </div>
+                    <p class="timeline-description">
+                        That was when Rishad participated in the 2023 Sanur International Kite Festival.
+                    </p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <!-- Festival 3 -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-image">
+                        <img src="pasirgudang.jpg" alt="Pasir Gudang International Kite Festival" onerror="this.src='https://via.placeholder.com/600x300/3b82f6/ffffff?text=Malaysia+Kite+Festival+2024'">
+                        <div class="timeline-badge">International</div>
+                    </div>
+                    <span class="timeline-year">2024</span>
+                    <h3 class="timeline-title">Pasir Gudang International Kite Festival</h3>
+                    <div class="timeline-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Pasir Gudang, Johor, Malaysia</span>
+                    </div>
+                    <p class="timeline-description">
+                       That was when Rishad participated in the 2024 Pasir Gudang International Kite Festival.
+                    </p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <!-- Festival 4 -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-image">
+                        <img src="angon.jpg" alt="Rare Angon Kite Festival" onerror="this.src='https://via.placeholder.com/600x300/3b82f6/ffffff?text=Rare+Angon+Bali+2024'">
+                        <div class="timeline-badge">Cultural Event</div>
+                    </div>
+                    <span class="timeline-year">2024</span>
+                    <h3 class="timeline-title">Rare Angon Kite Festival</h3>
+                    <div class="timeline-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Bali, Indonesia</span>
+                    </div>
+                    <p class="timeline-description">
+                       That was when Rishad participated in the 2024 Rare Angon Kite Festival in Bali.
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sky Dream. All rights reserved.</p>
+            <p>Bringing Indonesian traditions to the world🌏🪁</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scroll animation for timeline items
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe timeline items
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.timeline-item').forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = `all 0.6s ease ${index * 0.2}s`;
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
