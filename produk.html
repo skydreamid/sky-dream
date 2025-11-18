@@ -29,7 +29,6 @@
             overflow-x: hidden;
         }
 
-        /* Animated Background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -57,7 +56,6 @@
             50% { transform: translateY(-50px) rotate(180deg); }
         }
 
-        /* Navbar */
         .navbar {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             backdrop-filter: blur(10px);
@@ -105,7 +103,6 @@
             opacity: 1;
         }
 
-        /* Page Header */
         .page-header {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             padding: 80px 20px 100px;
@@ -148,7 +145,6 @@
             opacity: 0.95;
         }
 
-        /* Search & Filter Section */
         .filter-section {
             background: white;
             border-radius: 25px;
@@ -223,7 +219,6 @@
             box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
         }
 
-        /* Product Cards */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -275,39 +270,46 @@
             box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
         }
 
-        .product-img {
+        .product-img-slider {
             height: 350px;
             background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
             position: relative;
             overflow: hidden;
         }
 
-        .product-img::before {
-            content: '';
-            position: absolute;
+        .slider-container {
+            position: relative;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .product-card:hover .product-img::before {
-            transform: translateX(100%);
+        .slider-images {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
         }
 
-        .product-img img {
+        .slider-image {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .slider-image img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            padding: 30px;
             transition: transform 0.4s ease;
         }
 
-        .product-card:hover .product-img img {
+        .product-card:hover .slider-image img {
             transform: scale(1.1) rotate(5deg);
         }
 
@@ -320,6 +322,68 @@
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 2;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .slider-btn:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .slider-btn-prev {
+            left: 10px;
+        }
+
+        .slider-btn-next {
+            right: 10px;
+        }
+
+        .slider-btn i {
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+
+        .slider-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 2;
+        }
+
+        .slider-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: white;
+            width: 24px;
+            border-radius: 4px;
         }
 
         .product-body {
@@ -396,7 +460,6 @@
             color: white;
         }
 
-        /* Loading Animation */
         .loading {
             display: none;
             text-align: center;
@@ -433,7 +496,6 @@
             opacity: 0.3;
         }
 
-        /* Footer */
         footer {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
@@ -497,7 +559,6 @@
             border-top: 1px solid rgba(255,255,255,0.2);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .page-header h1 { font-size: 2.5rem; }
             .page-header p { font-size: 1.1rem; }
@@ -507,14 +568,12 @@
     </style>
 </head>
 <body>
-    <!-- Animated Background -->
     <div class="bg-animation">
         <div class="floating-shape shape1"></div>
         <div class="floating-shape shape2"></div>
         <div class="floating-shape shape3"></div>
     </div>
 
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html">
@@ -545,7 +604,6 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
     <section class="page-header">
         <div class="page-header-content">
             <h1>🪁 Our Products</h1>
@@ -553,7 +611,6 @@
         </div>
     </section>
 
-    <!-- Filter Section -->
     <div class="container">
         <div class="filter-section">
             <div class="search-box">
@@ -574,7 +631,6 @@
         </div>
     </div>
 
-    <!-- Products Section -->
     <div class="container">
         <div class="loading" id="loading">
             <div class="spinner"></div>
@@ -588,7 +644,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -638,7 +693,7 @@
                 category: "kite",
                 badge: "Best Seller",
                 emoji: "🪁",
-                image: "pilot.jpg"
+                images: ["pilot.jpg", "pilot2.jpg"]
             },
             { 
                 id: 2, 
@@ -648,7 +703,7 @@
                 category: "kite",
                 badge: "Popular",
                 emoji: "🐺",
-                image: "wolf.jpg"
+                images: ["wolf.jpg", "wolf2.jpg"]
             },
             { 
                 id: 3, 
@@ -658,7 +713,7 @@
                 category: "kite",
                 badge: "Show Stopper",
                 emoji: "🐙",
-                image: "octopus.jpg"
+                images: ["octopus.jpg", "octopus1.jpg"]
             },
             { 
                 id: 4, 
@@ -668,7 +723,7 @@
                 category: "kite",
                 badge: "Easy Fly",
                 emoji: "🦐",
-                image: "Trilobite.jpg"
+                images: ["Trilobite.jpg", "Trilobite1.jpg"]
             },
             {
                 id: 5,
@@ -678,14 +733,18 @@
                 category: "kite",
                 badge: "Easy Fly",
                 emoji: "🎈",
-                image: "MiniSled.jpg"
+                images: ["MiniSled.jpg", "MiniSled1.jpg"]
             }
         ];
         
         let filteredProducts = [...products];
         let currentCategory = 'all';
+        const sliderStates = {};
 
-        // Initialize
+        products.forEach(product => {
+            sliderStates[product.id] = { currentIndex: 0 };
+        });
+
         window.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 renderProducts();
@@ -694,7 +753,6 @@
             setupNavbarScroll();
         });
 
-        // Render Products
         function renderProducts() {
             const grid = document.getElementById('productsGrid');
             const loading = document.getElementById('loading');
@@ -713,8 +771,29 @@
             grid.innerHTML = filteredProducts.map((product, index) => `
                 <div class="product-card" style="animation-delay: ${index * 0.1}s">
                     ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
-                    <div class="product-img">
-                        ${product.image ? `<img src="${product.image}" alt="${product.name}" onerror="this.parentElement.innerHTML='<div class=\\'product-emoji\\'>${product.emoji}</div>'">` : `<div class="product-emoji">${product.emoji}</div>`}
+                    <div class="product-img-slider">
+                        <div class="slider-container">
+                            <div class="slider-images" id="slider-${product.id}">
+                                ${product.images.map(img => `
+                                    <div class="slider-image">
+                                        <img src="${img}" alt="${product.name}" onerror="this.parentElement.innerHTML='<div class=\\'product-emoji\\'>${product.emoji}</div>'">
+                                    </div>
+                                `).join('')}
+                            </div>
+                            ${product.images.length > 1 ? `
+                                <button class="slider-btn slider-btn-prev" onclick="changeSlide(${product.id}, -1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="slider-btn slider-btn-next" onclick="changeSlide(${product.id}, 1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                                <div class="slider-indicators">
+                                    ${product.images.map((_, idx) => `
+                                        <div class="slider-dot ${idx === 0 ? 'active' : ''}" onclick="goToSlide(${product.id}, ${idx})"></div>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
                     </div>
                     <div class="product-body">
                         <span class="product-category">${getCategoryLabel(product.category)}</span>
@@ -722,11 +801,8 @@
                         <p class="product-desc">${product.desc}</p>
                         <div class="product-footer">
                             <div class="product-price">${product.price}</div>
-                            <a href="https://wa.me/6282114811417?text=${encodeURIComponent(`Halo, saya ingin bertanya tentang ${product.name}`)}" 
-                               target="_blank" 
-                               class="btn-order">
-                                <i class="fab fa-whatsapp"></i>
-                                Pesan
+                            <a href="https://wa.me/6282114811417?text=${encodeURIComponent(`Halo, saya ingin bertanya tentang ${product.name}`)}" class="btn-order" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Order
                             </a>
                         </div>
                     </div>
@@ -734,56 +810,82 @@
             `).join('');
         }
 
-        // Category Label
+        function changeSlide(productId, direction) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const state = sliderStates[productId];
+            const maxIndex = product.images.length - 1;
+            
+            state.currentIndex += direction;
+            
+            if (state.currentIndex < 0) state.currentIndex = maxIndex;
+            if (state.currentIndex > maxIndex) state.currentIndex = 0;
+            
+            updateSlider(productId);
+        }
+
+        function goToSlide(productId, index) {
+            const state = sliderStates[productId];
+            state.currentIndex = index;
+            updateSlider(productId);
+        }
+
+        function updateSlider(productId) {
+            const slider = document.getElementById(`slider-${productId}`);
+            const state = sliderStates[productId];
+            
+            if (slider) {
+                slider.style.transform = `translateX(-${state.currentIndex * 100}%)`;
+                
+                const dots = slider.parentElement.querySelectorAll('.slider-dot');
+                dots.forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === state.currentIndex);
+                });
+            }
+        }
+
         function getCategoryLabel(category) {
             const labels = {
-                'kite': 'Kite',
-                'modern': 'Modern'
+                'kite': 'Traditional Kite',
+                'modern': 'Modern Kite',
+                'all': 'All Products'
             };
             return labels[category] || category;
         }
 
-        // Setup Event Listeners
         function setupEventListeners() {
-            // Search
             const searchInput = document.getElementById('searchInput');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+
             searchInput.addEventListener('input', (e) => {
                 const searchTerm = e.target.value.toLowerCase();
-                filterProducts(searchTerm, currentCategory);
+                filterProducts(currentCategory, searchTerm);
             });
 
-            // Filter Buttons
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            filterBtns.forEach(btn => {
+            filterButtons.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
+                    filterButtons.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
                     
                     currentCategory = btn.dataset.category;
                     const searchTerm = searchInput.value.toLowerCase();
-                    filterProducts(searchTerm, currentCategory);
+                    filterProducts(currentCategory, searchTerm);
                 });
             });
         }
 
-        // Filter Products
-        function filterProducts(searchTerm, category) {
-            const loading = document.getElementById('loading');
-            loading.classList.add('show');
+        function filterProducts(category, searchTerm = '') {
+            filteredProducts = products.filter(product => {
+                const matchesCategory = category === 'all' || product.category === category;
+                const matchesSearch = product.name.toLowerCase().includes(searchTerm) || 
+                                    product.desc.toLowerCase().includes(searchTerm);
+                return matchesCategory && matchesSearch;
+            });
 
-            setTimeout(() => {
-                filteredProducts = products.filter(product => {
-                    const matchesSearch = product.name.toLowerCase().includes(searchTerm) || 
-                                        product.desc.toLowerCase().includes(searchTerm);
-                    const matchesCategory = category === 'all' || product.category === category;
-                    return matchesSearch && matchesCategory;
-                });
-
-                renderProducts();
-            }, 300);
+            renderProducts();
         }
 
-        // Navbar Scroll Effect
         function setupNavbarScroll() {
             const navbar = document.querySelector('.navbar');
             window.addEventListener('scroll', () => {
