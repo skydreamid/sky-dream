@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kite | Katalog Produk Modern</title>
+    <title>Kite | Sky-Dream Indonesia</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -88,11 +88,6 @@
             transform: scale(1.05);
         }
 
-        .navbar-brand img {
-            height: 40px;
-            transition: transform 0.3s ease;
-        }
-
         .nav-link {
             color: white !important;
             font-weight: 600;
@@ -113,10 +108,9 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            padding: 100px 20px 120px;
+            padding: 120px 20px 150px;
             position: relative;
             overflow: hidden;
-            margin-bottom: -50px;
         }
 
         .hero::before {
@@ -175,254 +169,6 @@
             animation: fadeInUp 1.2s ease;
         }
 
-        /* Search & Filter Section */
-        .filter-section {
-            background: white;
-            border-radius: 25px;
-            padding: 30px;
-            margin: -50px auto 50px;
-            max-width: 1200px;
-            box-shadow: var(--card-shadow);
-            position: relative;
-            z-index: 10;
-        }
-
-        .search-box {
-            position: relative;
-            margin-bottom: 25px;
-        }
-
-        .search-box input {
-            width: 100%;
-            padding: 18px 50px 18px 25px;
-            border: 2px solid #e2e8f0;
-            border-radius: 50px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: #f8fafc;
-        }
-
-        .search-box input:focus {
-            outline: none;
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
-            background: white;
-        }
-
-        .search-box i {
-            position: absolute;
-            right: 25px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--secondary-color);
-            font-size: 1.2rem;
-        }
-
-        .filter-buttons {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .filter-btn {
-            padding: 12px 28px;
-            border: 2px solid #e2e8f0;
-            border-radius: 50px;
-            background: white;
-            color: var(--dark-text);
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        .filter-btn:hover {
-            border-color: var(--secondary-color);
-            color: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-
-        .filter-btn.active {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            border-color: transparent;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-        }
-
-        /* Product Cards */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-            padding: 20px 0;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            cursor: pointer;
-            animation: fadeIn 0.6s ease;
-            min-height: 600px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 60px rgba(30, 58, 138, 0.2);
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            z-index: 2;
-            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
-        }
-
-        .product-img {
-            height: 350px;
-            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-img::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-
-        .product-card:hover .product-img::before {
-            transform: translateX(100%);
-        }
-
-        .product-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 30px;
-            transition: transform 0.4s ease;
-        }
-
-        .product-card:hover .product-img img {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .product-emoji {
-            font-size: 5rem;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .product-body {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-category {
-            display: inline-block;
-            padding: 6px 14px;
-            background: var(--light-bg);
-            color: var(--secondary-color);
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-        }
-
-        .product-title {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-
-        .product-desc {
-            color: #64748b;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .product-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 15px;
-            border-top: 2px solid #f1f5f9;
-            margin-top: auto;
-        }
-
-        .product-price {
-            font-size: 1.8rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .btn-order {
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #25d366, #128c7e);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .btn-order:hover {
-            transform: scale(1.08);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-            color: white;
-        }
-
         .btn-hero {
             padding: 16px 40px;
             border-radius: 50px;
@@ -434,6 +180,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            text-decoration: none;
         }
 
         .btn-primary-custom {
@@ -458,39 +205,99 @@
             transform: translateY(-3px);
         }
 
-        /* Stats Section */
-        .stats-section {
-            padding: 60px 20px;
+        /* Features Section */
+        .features-section {
+            padding: 80px 20px;
             background: white;
-            margin: 50px 0;
         }
 
-        .stat-box {
+        .section-title {
             text-align: center;
-            padding: 30px;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 40px 30px;
             border-radius: 20px;
             background: linear-gradient(135deg, var(--light-bg), white);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
 
-        .stat-box:hover {
-            transform: translateY(-5px);
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(30, 58, 138, 0.15);
         }
 
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: bounce 2s infinite;
         }
 
-        .stat-label {
-            font-size: 1.1rem;
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .feature-desc {
             color: #64748b;
-            font-weight: 600;
-            margin-top: 10px;
+            line-height: 1.7;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--light-bg), white);
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            text-align: center;
+            font-size: 15rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         /* Footer */
@@ -498,7 +305,7 @@
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
             padding: 60px 20px 30px;
-            margin-top: 80px;
+            margin-top: 0;
         }
 
         .footer-content {
@@ -557,64 +364,14 @@
             border-top: 1px solid rgba(255,255,255,0.2);
         }
 
-        /* Loading Animation */
-        .loading {
-            display: none;
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .loading.show {
-            display: block;
-        }
-
-        .spinner {
-            width: 60px;
-            height: 60px;
-            border: 5px solid #e2e8f0;
-            border-top-color: var(--secondary-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        .no-results {
-            text-align: center;
-            padding: 80px 20px;
-            color: #64748b;
-        }
-
-        .no-results i {
-            font-size: 5rem;
-            margin-bottom: 20px;
-            opacity: 0.3;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1.1rem; }
-            .products-grid { grid-template-columns: 1fr; }
-            .filter-section { padding: 20px; margin: -30px 15px 30px; }
             .hero-buttons { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
             .btn-hero { width: 100%; justify-content: center; }
-        }
-
-        /* Quick View Modal Styles */
-        .modal-content {
-            border-radius: 20px;
-            border: none;
-        }
-
-        .modal-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            border-radius: 20px 20px 0 0;
-            border: none;
+            .about-content { grid-template-columns: 1fr; }
+            .about-image { font-size: 8rem; }
         }
     </style>
 </head>
@@ -629,9 +386,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#home">
-                <img src="logo.png" alt="Logo">
-                <span>KITE</span>
+            <a class="navbar-brand" href="index.html">
+                <span>🪁 KITE</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -639,19 +395,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#home">Home</a>
+                        <a class="nav-link active" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#products">Produk</a>
+                        <a class="nav-link" href="produk.html">Produk</a>
                     </li>
                     <li class="nav-item">
-                         <a class="nav-link" href="desain.html">Kite Designer</a>
+                        <a class="nav-link" href="desain.html">Kite Designer</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#kontak">Kontak</a>
+                        <a class="nav-link" href="#kontak">Kontak</a>
                     </li>
                 </ul>
             </div>
@@ -659,14 +415,14 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="hero-content">
             <h1>🪁 Sky-Dream Indonesia</h1>
-            <p>A collection of high quality kites with modern and traditional designs./p>
+            <p>A collection of high quality kites with modern and traditional designs.</p>
             <div class="hero-buttons">
-                <button class="btn btn-primary-custom btn-hero" onclick="scrollToProducts()">
+                <a href="produk.html" class="btn btn-primary-custom btn-hero">
                     <i class="fas fa-shopping-bag"></i> View Catalog
-                </button>
+                </a>
                 <a href="https://wa.me/6282114811417" target="_blank" class="btn btn-outline-custom btn-hero">
                     <i class="fab fa-whatsapp"></i> Contact us
                 </a>
@@ -674,300 +430,86 @@
         </div>
     </section>
 
-    <!-- Filter Section -->
-    <div class="container">
-        <div class="filter-section" id="products">
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Cari layang-layang favorit Anda...">
-                <i class="fas fa-search"></i>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Sky-Dream Indonesia</h2>
+                <p>Sky-Dream Indonesia is a trusted online store that specializes in providing high-quality kites with a variety of designs, from traditional to modern.</p>
+                <p>We are committed to preserving Indonesian cultural heritage through traditional kites, while also presenting innovative modern designs to suit all tastes.</p>
+                <p>Each of our products is carefully crafted to ensure quality and flying performance is always optimal.</p>
+                <a href="produk.html" class="btn btn-primary-custom btn-hero mt-3">
+                    <i class="fas fa-arrow-right"></i> Explore Products
+                </a>
             </div>
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-category="all">
-                    <i class="fas fa-th"></i> All Products
-                </button>
-                <button class="filter-btn" data-category="kite">
-                    <i class="fas fa-landmark"></i> kite
-                </button>
-                <button class="filter-btn" data-category="modern">
-                    <i class="fas fa-star"></i> Modern
-                </button>
+            <div class="about-image">
+                🪁
             </div>
         </div>
-    </div>
-
-    <!-- Products Section -->
-    <div class="container">
-        <div class="loading" id="loading">
-            <div class="spinner"></div>
-            <p>Loading products...</p>
-        </div>
-        <div class="products-grid" id="productsGrid"></div>
-        <div class="no-results" id="noResults" style="display: none;">
-            <i class="fas fa-search"></i>
-            <h3>No Products Found</h3>
-            <p>Try a different keyword or a different filter</p>
-        </div>
-    </div>
-
-    <!-- Stats Section -->
-   
+    </section>
 
     <!-- Footer -->
-    <footer id="contact">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>🪁 Sky Dream</h4>
-                <p>A trusted online store for high-quality kites. We ship throughout Indonesia.</p>
-                <div class="social-links">
-                    <a href="https://wa.me/6282114811417" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
+    <footer id="kontak">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🪁 Sky Dream</h4>
+                    <p>A trusted online store for high-quality kites. We ship throughout Indonesia.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/6282114811417" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <a href="index.html">Home</a>
+                    <a href="produk.html">Products</a>
+                    <a href="#kontak">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Product Categories</h4>
+                    <a href="produk.html">Traditional Kites</a>
+                    <a href="produk.html">Modern Kites</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> South Jakarta, DKI Jakarta</p>
+                    <p><i class="fas fa-phone"></i> +62 821-1481-1417</p>
+                    <p><i class="fas fa-envelope"></i> info@layangindah.com</p>
+                    <p><i class="fas fa-clock"></i> Monday - Sunday: 08:00 AM - 08:00 PM</p>
                 </div>
             </div>
-            <div class="footer-section">
-                <h4>Navigation</h4>
-                <a href="#home">Home</a>
-                <a href="#products">Products</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="footer-section">
-                <h4>Product Categories</h4>
-                <a href="#">Traditional Kites</a>
-                <a href="#">Modern Kites</a>
-            </div>
-            <div class="footer-section">
-                <h4>Contact Us</h4>
-                <p><i class="fas fa-map-marker-alt"></i> South Jakarta, DKI Jakarta</p>
-                <p><i class="fas fa-phone"></i> +62 821-1481-1417</p>
-                <p><i class="fas fa-envelope"></i> info@layangindah.com</p>
-                <p><i class="fas fa-clock"></i> Monday - Sunday: 08:00 AM - 08:00 PM</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sky Dream. All rights reserved.</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Sky Dream. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
-
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
-        const products = [
-            { 
-                id: 1, 
-                name: "Pilot/Lifter Kite", 
-                desc: "A pilot/lifter is a kite used to lift a show kite. We offer pilots in two materials: ripstop and parachute. Prices vary for each material. We offer two pilot sizes: 240cm and 320cm. We offer high-quality, affordable products.", 
-                price: "Contact Us", 
-                category: "kite",
-                badge: "Best Seller",
-                emoji: "🪁",
-                image: "pilot.jpg"
-            },
-            { 
-                id: 2, 
-                name: "Wolf Kite", 
-                desc: "He is cute, he is cuddly, and you don't need a pooper scooper when you take this mans best friend to the beach!! A real show stopper especially with the kids. Can be made to your specific colours. We have various sizes: 3 meters, 6 meters, and 9 meters. For more information, please contact us.", 
-                price: "Contact Us", 
-                category: "kite",
-                badge: "Popular",
-                emoji: "🐺",
-                image: "wolf.jpg"
-            },
-            { 
-                id: 3, 
-                name: "Octopus Kite", 
-                desc: "The 7-meter octopus inflatable kite is a unique and attractive kite with a giant octopus design that expands when flown. This kite features a unique and attractive octopus shape, with eight tentacles that expand when flown. This design makes it look like a real octopus swimming in the sky. Large Size, at 7 meters, this kite is quite large and can attract a lot of attention. Its large size also makes it more stable when flown.", 
-                price: "Contact Us", 
-                category: "kite",
-                badge: "Show Stopper",
-                emoji: "🐙",
-                image: "octopus.jpg"
-            },
-            { 
-                id: 4, 
-                name: "Trilobite Kite", 
-                desc: "The Trilobite Inflatable Kite is an easy-to-fly kite designed for everyone, from beginners to experienced flyers. Its lightweight and inflatable structure makes it simple to set up and launch, even in gentle winds. With its bright and eye-catching colors, this kite easily attracts attention and invites people to come closer to admire its beauty in the sky. Measuring 120 x 230 cm, it offers an impressive presence when flying, making it perfect for festivals, beach events, or personal fun. The color can be customized upon request, allowing you to choose the design that best fits your style or brand. Durable, fun, and visually striking.", 
-                price: "Contact Us", 
-                category: "kite",
-                badge: "Easy Fly",
-                emoji: "🦐",
-                image: "Trilobite.jpg"
-            },
-            {
-    id: 5,
-    name: "Mini Sled",
-    desc: "The Mini Sled Kite is a simple yet reliable kite that’s incredibly easy to fly — even for children. With its stable and lightweight design, this kite can soar high and stay steady in the sky. Perfect for beginners, families, and casual flyers, it’s a great choice for outdoor fun on the beach, park, or open field. Compact and colorful, the Mini Sled is available in a variety of bright shades to match your personality and style. Built to be durable and easy to handle, it delivers a joyful flying experience for all ages.",
-    price: "Contact Us",
-    category: "kite",
-    badge: "Easy Fly",
-    emoji: "🎈",
-    image: "MiniSled.jpg"
-}
-
-        ];
-        let filteredProducts = [...products];
-        let currentCategory = 'all';
-
-        // Initialize
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                renderProducts();
-            }, 500);
-            setupEventListeners();
-            setupNavbarScroll();
+        // Navbar Scroll Effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
 
-        // Render Products
-        function renderProducts() {
-            const grid = document.getElementById('productsGrid');
-            const loading = document.getElementById('loading');
-            const noResults = document.getElementById('noResults');
-
-            loading.classList.remove('show');
-
-            if (filteredProducts.length === 0) {
-                grid.innerHTML = '';
-                noResults.style.display = 'block';
-                return;
-            }
-
-            noResults.style.display = 'none';
-            
-            grid.innerHTML = filteredProducts.map((product, index) => `
-                <div class="product-card" style="animation-delay: ${index * 0.1}s">
-                    ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
-                    <div class="product-img">
-                        <img src="${product.image}" alt="${product.name}" onerror="this.style.display='none'">
-                    </div>
-                    <div class="product-body">
-                        <span class="product-category">${getCategoryLabel(product.category)}</span>
-                        <h3 class="product-title">${product.name}</h3>
-                        <p class="product-desc">${product.desc}</p>
-                        <div class="product-footer">
-                            <div class="product-price">Rp ${product.price.toLocaleString('id-ID')}</div>
-                            <a href="https://wa.me/6282114811417?text=${encodeURIComponent(`Halo, saya ingin memesan ${product.name} seharga Rp ${product.price.toLocaleString('id-ID')}`)}" 
-                               target="_blank" 
-                               class="btn-order">
-                                <i class="fab fa-whatsapp"></i>
-                                Pesan
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Category Label
-        function getCategoryLabel(category) {
-            const labels = {
-                'kite': 'Kite',
-                'modern': 'Modern'
-            };
-            return labels[category] || category;
-        }
-
-        // Setup Event Listeners
-        function setupEventListeners() {
-            // Search
-            const searchInput = document.getElementById('searchInput');
-            searchInput.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase();
-                filterProducts(searchTerm, currentCategory);
-            });
-
-            // Filter Buttons
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    
-                    currentCategory = btn.dataset.category;
-                    const searchTerm = searchInput.value.toLowerCase();
-                    filterProducts(searchTerm, currentCategory);
-                });
-            });
-
-            // Smooth Scroll for Nav Links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        
-                        // Update active nav link
-                        document.querySelectorAll('.nav-link').forEach(link => {
-                            link.classList.remove('active');
-                        });
-                        if (this.classList.contains('nav-link')) {
-                            this.classList.add('active');
-                        }
-                    }
-                });
-            });
-        }
-
-        // Filter Products
-        function filterProducts(searchTerm, category) {
-            const loading = document.getElementById('loading');
-            loading.classList.add('show');
-
-            setTimeout(() => {
-                filteredProducts = products.filter(product => {
-                    const matchesSearch = product.name.toLowerCase().includes(searchTerm) || 
-                                        product.desc.toLowerCase().includes(searchTerm);
-                    const matchesCategory = category === 'all' || product.category === category;
-                    return matchesSearch && matchesCategory;
-                });
-
-                renderProducts();
-            }, 300);
-        }
-
-        // Scroll to Products
-        function scrollToProducts() {
-            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Navbar Scroll Effect
-        function setupNavbarScroll() {
-            const navbar = document.querySelector('.navbar');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
-        }
-
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe stat boxes
-        setTimeout(() => {
-            document.querySelectorAll('.stat-box').forEach(box => {
-                box.style.opacity = '0';
-                box.style.transform = 'translateY(30px)';
-                box.style.transition = 'all 0.6s ease';
-                observer.observe(box);
-            });
-        }, 1000);
+        });
     </script>
 </body>
 </html>
