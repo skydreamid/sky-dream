@@ -60,18 +60,11 @@
         /* Navbar */
         .navbar {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            backdrop-filter: blur(10px);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            padding: 10px 0;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
         }
 
         .navbar-brand {
@@ -81,11 +74,10 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            transition: transform 0.3s ease;
         }
 
-        .navbar-brand:hover {
-            transform: scale(1.05);
+        .navbar-brand img {
+            height: 40px;
         }
 
         .nav-link {
@@ -100,8 +92,6 @@
 
         .nav-link:hover, .nav-link.active {
             background: rgba(255, 255, 255, 0.2);
-            color: white !important;
-            transform: translateY(-2px);
             opacity: 1;
         }
 
@@ -333,11 +323,12 @@
         <div class="floating-shape shape3"></div>
     </div>
 
-    <!-- Navbar -->
+           <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <span>KITE</span>
+                <img src="logo.png" alt="Logo">
+                <span>Sky Dream</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -345,7 +336,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html#home">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About Us</a>
@@ -354,10 +345,10 @@
                         <a class="nav-link" href="produk.html">Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="desain.html">Kite Designer</a>
+                         <a class="nav-link" href="desain.html">Kite Designer</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#kontak">Kontak</a>
+                        <a class="nav-link" href="index.html#kontak">Kontak</a>
                     </li>
                 </ul>
             </div>
@@ -388,7 +379,7 @@
                 <p>Sky Dream was born from Rishad’s passion for exploring the world of both modern and traditional kites. From this passion came the creation of Sky Dream a place dedicated to bringing creative works to life, whether soaring in the sky or displayed in public spaces.</p>
                 <p>Based in Jakarta, Indonesia, Sky Dream focuses on show kites and inflatable displays. We don’t just sell kites, we also design and produce inflatable displays for a wide range of needs. From mall decorations and major events to creative installations that require strong visual impact.</p>
                 <p>We offer design, production, rental, and display services for our inflatable creations and show kites, delivering eye catching visuals wherever they are showcased. With a blend of creativity, quality craftsmanship, and strong dedication, Sky Dream is here to bring your ideas to life-both in the air and on the ground.</p>
-                <p>Bringing your vision to the sky</p>
+                <p>Bringing your vision to the sky!</p>
                 <a href="produk.html" class="btn btn-primary-custom btn-hero mt-3">
                     <i class="fas fa-arrow-right"></i> Explore Products
                 </a>
