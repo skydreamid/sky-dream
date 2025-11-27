@@ -56,52 +56,43 @@
                         50% { transform: translateY(-50px) rotate(180deg); }
                     }
 
-                    .navbar {
-                        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-                        backdrop-filter: blur(10px);
-                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-                        padding: 15px 0;
-                        position: sticky;
-                        top: 0;
-                        z-index: 1000;
-                        transition: all 0.3s ease;
-                    }
+                   /* Navbar */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-                    .navbar.scrolled {
-                        padding: 10px 0;
-                        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
-                    }
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: white !important;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-                    .navbar-brand {
-                        font-weight: 800;
-                        font-size: 1.5rem;
-                        color: white !important;
-                        display: flex;
-                        align-items: center;
-                        gap: 12px;
-                        transition: transform 0.3s ease;
-                    }
+        .navbar-brand img {
+            height: 40px;
+        }
 
-                    .navbar-brand:hover {
-                        transform: scale(1.05);
-                    }
+        .nav-link {
+            color: white !important;
+            font-weight: 600;
+            padding: 8px 20px !important;
+            margin: 0 5px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
 
-                    .nav-link {
-                        color: white !important;
-                        font-weight: 600;
-                        padding: 8px 20px !important;
-                        margin: 0 5px;
-                        border-radius: 25px;
-                        transition: all 0.3s ease;
-                        opacity: 0.9;
-                    }
-
-                    .nav-link:hover, .nav-link.active {
-                        background: rgba(255, 255, 255, 0.2);
-                        color: white !important;
-                        transform: translateY(-2px);
-                        opacity: 1;
-                    }
+        .nav-link:hover, .nav-link.active {
+            background: rgba(255, 255, 255, 0.2);
+            opacity: 1;
+        }
 
                     .page-header {
                         background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
@@ -574,35 +565,37 @@
                     <div class="floating-shape shape3"></div>
                 </div>
 
-                <nav class="navbar navbar-expand-lg navbar-dark">
-                    <div class="container">
-                        <a class="navbar-brand" href="index.html">
-                            <span>🪁 KITE</span>
-                        </a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav ms-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index.html">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="about.html">About Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="produk.html">Produk</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="desain.html">Kite Designer</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index.html#kontak">Kontak</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+                 <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="Logo">
+                <span>Sky Dream</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="produk.html">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link" href="desain.html">Kite Designer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#kontak">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
                 <section class="page-header">
                     <div class="page-header-content">
@@ -703,7 +696,7 @@
                             category: "kite",
                             badge: "Popular",
                             emoji: "🐺",
-                            images: ["wolf.jpg", "wolf2.jpg"]
+                            images: ["wolf.jpg", "wolf1.jpg"]
                         },
                         { 
                             id: 3, 
